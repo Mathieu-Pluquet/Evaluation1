@@ -8,7 +8,7 @@ include('bdd.php');
 
 function get_img_articles(){
 include('bdd.php');
-   $reponse = $bdd->query('SELECT * FROM image i INNER JOIN articles a ON a.id_img = i.id');
+   $reponse = $bdd->query('SELECT * FROM user u INNER JOIN project p ON p.id_user = u.id');
    return $reponse->fetchAll();
 }
 
@@ -20,19 +20,22 @@ include('bdd.php');
 }
 
 
-function envoie_enregistrement($pseudo, $password, $mail){
+function envoie_enregistrement($pseudo, $password, $mail, $name, $surname, $age){
 include('bdd.php');
-  $req = $bdd->prepare('INSERT INTO Connexion (pseudo, password, mail) VALUES(:pseudo, :password, :mail)');
+  $req = $bdd->prepare('INSERT INTO user (pseudo, password, mail, name, surname, age) VALUES(:pseudo, :password, :mail, :name, :surname, :age)');
   $req->execute(array(
      'pseudo' => $pseudo,
      'password'=> $password,
-     'mail'=> $mail
+     'mail'=> $mail,
+     'name'=>$name,
+     'surname'=>$surname,
+     'age'=>$age
      ));
 }
 
 function comparaison_mdp($password, $pseudo){
 include('bdd.php');
-$req=$bdd->prepare('SELECT * FROM Connexion WHERE password=:password and pseudo=:pseudo');
+$req=$bdd->prepare('SELECT * FROM user WHERE password=:password and pseudo=:pseudo');
 $req->execute(array(
   'password'=>$password,
   'pseudo'=>$pseudo
@@ -42,7 +45,7 @@ return $req->fetch();
 
 function comparaison_pseudo($pseudo){
 include('bdd.php');
-$req=$bdd->prepare('SELECT * FROM Connexion WHERE  pseudo=:pseudo');
+$req=$bdd->prepare('SELECT * FROM user WHERE  pseudo=:pseudo');
 $req->execute(array(
   'pseudo'=>$pseudo
 ));

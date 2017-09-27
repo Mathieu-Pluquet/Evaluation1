@@ -8,12 +8,20 @@
 <body>
       <div class="container" id="inscription">
         <h1>Inscrivez-vous :</h1>
-  <form class="" action="../controle/enregistrement_post.php" method="post">
+  <form class="" action="../controle/logging_post.php" method="post">
 
     <input type="text" name="pseudo" placeholder="pseudo" value=""><br>
     <p><?php if(isset($_SESSION['erreur']["pseudo"])) {
       echo 'Votre pseudo est déjà pris, veuillez en choisir un autre';
     }?></p>
+
+    <input type="text" name="name" placeholder="name" value=""><br>
+    <p></p>
+
+    <input type="text" name="surname" placeholder="surname"value=""><br><p></p>
+
+    <input type="text" name="age" placeholder="age"value=""><br><p></p>
+
 
     <input type="password" name="password" placeholder="password" value=""><br>
     <p></p>

@@ -30,12 +30,12 @@
     <header class="header-color">
       <?php
 if(isset($_SESSION['pseudo'])){
-  echo '<form action="../controle/deconnexion.php" method="POST">';
+  echo '<form action="../controle/disconnected.php" method="POST">';
   echo '<input type="submit" value="Deconnexion">';
   echo '</form>';
 }
 else{
-  echo '<form action="connexion.php" method="POST">';
+  echo '<form action="connection.php" method="POST">';
   echo '<input type="submit" value="Connexion">';
   echo '</form>';
 }
