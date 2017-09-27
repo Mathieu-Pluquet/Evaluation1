@@ -26,11 +26,6 @@ foreach ($variable as $donnees) {
 </section>
 
 
-
-
-
-
-
 <?php
 }
 ?>
