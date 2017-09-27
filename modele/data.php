@@ -14,7 +14,7 @@ include('bdd.php');
 
 function get_img_articles_id($vartest){
 include('bdd.php');
-  $reponse = $bdd->prepare('SELECT * FROM image i INNER JOIN articles a ON a.id_img = i.id and a.id = ?');
+  $reponse = $bdd->prepare('SELECT * FROM project p INNER JOIN step s ON s.id_project = p.id and p.id = ?');
   $reponse->execute(array($vartest));
   return $reponse->fetchAll();
 }

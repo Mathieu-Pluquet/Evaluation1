@@ -14,12 +14,11 @@
 //  $reponse = $bdd->query('SELECT * FROM image i INNER JOIN articles a ON a.id_img = i.id');
  foreach ($variable as $donnees) {
 ?>
-       <form class="card my-4" action="../controle/descriptif.php" style="width: 20rem;" method="post">
+       <form class="card my-4" action="../controle/descriptive.php" style="width: 20rem;" method="post">
 
                  <div class="card">
-           <h3 class="card-header">Featured</h3>
+           <h3 class="card-header"><?php echo $donnees["nom_project"];?></h3>
            <div class="card-block">
-             <h4 class="card-title"><?php echo $donnees["nom_project"];?></h4>
              <p class="card-text"><?php echo $donnees["text_project"];?></p>
              <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
              <input type="submit" class="btn btn-custom" value="Voir plus"></input>
