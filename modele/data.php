@@ -86,11 +86,20 @@ include('bdd.php');
 
 function delete_project($idp){
 include('bdd.php');
-  $req =$bdd->prepare("DELETE FROM project WHERE id_project= ?");
+  $req =$bdd->prepare("DELETE FROM project WHERE id= ?");
   $req->execute(array(
-    'id_project'=>$idp
+    $idp
     ));
 }
+
+function delete_step($idp){
+include('bdd.php');
+  $req =$bdd->prepare("DELETE FROM step WHERE id_project= ?");
+  $req->execute(array(
+    $idp
+    ));
+}
+
 
 
 
