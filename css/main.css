@@ -95,7 +95,99 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+   /*header{
+     background-color: #D8C9AD;
+     color :#000000;
+     height: 100px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin-top: 20px;
+   }
 
+   h1{
+     padding: 0;
+     margin: 0;
+   }
+
+
+   body {
+     background-color: #A5947F;
+     padding: 0;
+     margin: 0;
+   }
+
+   footer  {
+     background-color: #D8C9AD;
+     height: 150px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     font-weight: bold;
+     margin-top: 100px;
+     width: 100%;
+   }
+
+   footer p {
+     margin: 0;
+     color: black;
+   }*/
+
+   .row{
+     display: flex;
+     justify-content: space-around;
+     align-items: space-around;
+   }
+
+   .card img{
+   height : 400px;
+   }
+
+   .btn-custom {
+     background-color: #59514A;
+     color: #ffffff;
+   }
+
+   .btn-custom:hover{
+     background-color: #D8C9AD;
+     color: #ffffff;
+   }
+
+   .imgdesc {
+     width: 200px;
+     height: 200px;
+   }
+
+   i{
+     color: black;
+   }
+
+   .bdelete {
+     left: auto;
+   }
+
+   .pls {
+     flex-wrap: wrap;
+     width: 100%;
+   }
+
+   #inscription {
+     text-align: center;
+     line-height: 30px
+   }
+
+   #inscription a{
+     text-decoration: none;#D8#D8C9AD;C9AD;
+     color: #59514A;
+     background-color: #D8C9AD;
+   }
+
+   #inscription a:hover{
+     color: #D8C9AD;
+     background-color: #59514A;
+   }
 
 
 

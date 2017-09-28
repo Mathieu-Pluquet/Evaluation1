@@ -40,7 +40,8 @@ else{
   echo '</form>';
 }
 ?>
-        <h1 class="display-3 text-center">Evaluation1</h1>
-        <p class="lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h1 class="hid display-3 text-center">Evaluation1</h1>
+        <p class="hid lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      </header>
       </body>
     </html>

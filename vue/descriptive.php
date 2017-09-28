@@ -1,12 +1,12 @@
 <?php
 if(isset($_SESSION['pseudo'])){
-  echo '<form action="../controle/create_step.php" method="POST">';
-  echo '<input type="submit" value="Add a step">';
-  echo '</form>';
-}
-
-?>
+  ?>
+<form action="../controle/create_step.php" method="POST">;
+  <input type="hidden" name="idp" value="<?php echo $_POST['test'] ?>">
+  <input type="submit" value="Add a step">;
+</form>;
 <?php
+}
 // $vartest= $_POST["test"];
 // include('bdd.php');
 

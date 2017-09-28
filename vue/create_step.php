@@ -8,6 +8,7 @@
   <body>
     <?php
     // include('header.php');
+    $idp= $_POST['idp'];
      ?>
 <?php
 // include('bdd.php');
@@ -23,6 +24,7 @@ echo 'Bonjour '.$_SESSION['pseudo'];
 <form enctype="multipart/form-data" class="" action="../controle/create_step_post.php" method="post">
 <input type="text" name="name_step" value="" placeholder="nom" required="required"><br>
 <input type="text" name="text_step" value="" placeholder="courte description" required="required"><br>
+<input type="hidden" name="idp" value="<?php echo $_POST['idp'] ?>">
 <input type="submit" name="publier" value="publier">
 </form>
 </div>

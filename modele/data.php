@@ -83,4 +83,15 @@ include('bdd.php');
     'text_step'=>$text,
     'id_project'=>$idp));
 }
+
+function delete_project($idp){
+include('bdd.php');
+  $req =$bdd->prepare("DELETE FROM project WHERE id_project= ?");
+  $req->execute(array(
+    'id_project'=>$idp
+    ));
+}
+
+
+
 ?>

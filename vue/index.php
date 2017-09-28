@@ -21,10 +21,14 @@
            <div class="card-block">
              <p class="card-text"><?php echo $donnees["text_project"];?></p>
              <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
-             <input type="text" name="bin" value="">
              <input type="submit" class="btn btn-custom" value="Voir plus"></input>
            </div>
          </div>
+        </form>
+
+        <form class="bdelete" action="../controle/delete_project.php" method="post">
+          <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
+              <input type="submit" name="delete" value="delete">
         </form>
 
 
