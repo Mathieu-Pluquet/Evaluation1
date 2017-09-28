@@ -1,7 +1,7 @@
 <?php
     if(isset($_SESSION['pseudo'])){
       echo '<form action="../controle/create_project.php" method="POST">';
-      echo '<input type="submit" value="Publier un article">';
+      echo '<input type="submit" value="Add a project">';
       echo '</form>';
         echo 'Bonjour '.$_SESSION['pseudo'];
     }

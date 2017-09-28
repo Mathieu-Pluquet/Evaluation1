@@ -1,15 +1,26 @@
 <?php
-// include('header.php');
+if(isset($_SESSION['pseudo'])){
+  echo '<form action="../controle/create_step.php" method="POST">';
+  echo '<input type="submit" value="Add a project">';
+  echo '</form>';
+}
+
 ?>
 <?php
 // $vartest= $_POST["test"];
-?>
-<?php
 // include('bdd.php');
 
 // $reponse = $bdd->prepare('SELECT * FROM image i INNER JOIN articles a ON a.id_img = i.id and a.id = ?');
 // $reponse->execute(array($vartest));
 
+// include('bdd.php');
+echo 'Bonjour '.$_SESSION['pseudo'];
+?>
+<form class="" action="../controle/index.php" method="post">
+  <input type="submit" name="" value="retour">
+</form>
+
+<?php
 foreach ($variable as $donnees) {
 ?>
 <section>
