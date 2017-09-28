@@ -1,6 +1,6 @@
 <?php
     if(isset($_SESSION['pseudo'])){
-      echo '<form action="../controle/formulaire.php" method="POST">';
+      echo '<form action="../controle/create_project.php" method="POST">';
       echo '<input type="submit" value="Publier un article">';
       echo '</form>';
         echo 'Bonjour '.$_SESSION['pseudo'];
@@ -17,7 +17,7 @@
        <form class="card my-4" action="../controle/descriptive.php" style="width: 20rem;" method="post">
 
                  <div class="card">
-           <h3 class="card-header"><?php echo $donnees["nom_project"];?></h3>
+           <h3 class="card-header"><?php echo $donnees["name_project"];?></h3>
            <div class="card-block">
              <p class="card-text"><?php echo $donnees["text_project"];?></p>
              <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">

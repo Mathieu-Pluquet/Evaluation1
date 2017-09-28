@@ -59,18 +59,19 @@ include('bdd.php');
   return $donnees;
 }
 
-function envoie_article($donnees, $infos){
-include('bdd.php');
-  $req = $bdd->prepare('INSERT INTO articles SET id_img=?, nom=?, description=?, grosse_description=? ');
-  $req->execute([$donnees['img_id'],$infos['nom'],$infos['description'], $infos['grosse_description']]);
-}
+// function envoie_article($infos){
+// include('bdd.php');
+//   $req = $bdd->prepare('INSERT INTO project SET name_project=?, text_project=?, date_project=? ');
+//   $req->execute([$infos['name_project'],$infos['text_project'], $infos['date_project']]);
+// }
 
-function envoie_img($img_nom, $img_taille, $img_type){
+function create_project($name, $text, $date, $ids){
 include('bdd.php');
-  $req =$bdd->prepare("INSERT INTO image (nom_img, poids, type) VALUES (:nom_img, :poids, :type)");
+  $req =$bdd->prepare("INSERT INTO project (id_user,name_project,text_project, date_project) VALUES (:id_user,:name_project,:text_project, :date_project)");
   $req->execute(array(
-    'nom_img'=> $img_nom,
-    'poids'=>$img_taille,
-    'type'=>$img_type ));
+    'name_project'=> $name,
+    'text_project'=>$text,
+    'date_project'=>$date,
+    'id_user'=>$ids));
 }
 ?>
