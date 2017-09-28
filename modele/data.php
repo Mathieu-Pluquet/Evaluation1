@@ -74,4 +74,13 @@ include('bdd.php');
     'date_project'=>$date,
     'id_user'=>$ids));
 }
+
+function create_step($name, $text, $idp){
+include('bdd.php');
+  $req =$bdd->prepare("INSERT INTO step (id_project,name_step,text_step) VALUES (:id_project,:name_step,:text_step)");
+  $req->execute(array(
+    'name_step'=> $name,
+    'text_step'=>$text,
+    'id_project'=>$idp));
+}
 ?>

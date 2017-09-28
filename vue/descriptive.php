@@ -1,7 +1,7 @@
 <?php
 if(isset($_SESSION['pseudo'])){
   echo '<form action="../controle/create_step.php" method="POST">';
-  echo '<input type="submit" value="Add a project">';
+  echo '<input type="submit" value="Add a step">';
   echo '</form>';
 }
 
@@ -29,7 +29,9 @@ foreach ($variable as $donnees) {
      <div class="card">
      <h3 class="card-header"><?php echo $donnees["name_step"];?></h3>
      <div class="card-block">
-     <p class="card-text"><?php echo $donnees["text_step"];?></p>
+       <ul>
+            <li class="card-text"><?php echo $donnees["text_step"];?></li>
+       </ul>
      </div>
      </div>
   </div>
