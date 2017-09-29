@@ -84,6 +84,16 @@ include('bdd.php');
     'id_project'=>$idp));
 }
 
+function create_task($name, $date, $idp){
+include('bdd.php');
+  $req =$bdd->prepare("INSERT INTO step (id_step,name_task,date_task) VALUES (:id_step,:name_task,:date_task)");
+  $req->execute(array(
+    'name_task'=> $name,
+    'date_task'=>$date,
+    'id_step'=>$idp));
+}
+
+
 function delete_project($idp){
 include('bdd.php');
   $req =$bdd->prepare("DELETE FROM project WHERE id= ?");

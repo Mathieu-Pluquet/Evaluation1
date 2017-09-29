@@ -35,10 +35,16 @@ foreach ($variable as $donnees) {
             <li class="card-text"><?php echo $donnees["text_step"];?></li>
        </ul>
      </div>
+     <form class="" action="../controle/create_task.php" method="post">
+       <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
+       <input type="submit" name="task" value="add task">
+     </form>
+     
      <form class="bdelete" action="../controle/delete_project.php" method="post">
        <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
        <input type="submit" name="delete" value="delete">
      </form>
+
      </div>
   </div>
 </div>
