@@ -133,4 +133,11 @@ include('bdd.php');
     ));
 }
 
+function send_end_task($idp){
+  include('bdd.php');
+  $req =$bdd->prepare("UPDATE task SET end_task = 'true' WHERE id = :id");
+  $req->execute(array(
+    'id'=>$idp));
+}
+
 ?>

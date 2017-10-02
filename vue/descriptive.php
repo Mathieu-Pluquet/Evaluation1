@@ -34,7 +34,16 @@ foreach ($variable as $donnees) {
                 <input type="hidden" name="deletask" value="<?php echo $donneestask["id"]?>">
                 <input type="submit" name="deletetask" value="delete task">
               </form>
-              <?php echo $donneestask["name_task"];}?>
+
+              <form class="" action="../controle/end_task.php" method="post">
+                <input type="hidden" name="endtask" value="<?php echo $donneestask["id"]?>">
+                <input type="submit" name="end" value="">
+              </form>
+                    <?php echo $donneestask["name_task"];
+              if ($donneestask['end_task'] == 'true'){?>
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+              <?php }
+                } ?>
             </li>
           <?php } ?>
        </ul>
