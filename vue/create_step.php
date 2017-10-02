@@ -7,11 +7,7 @@
   </head>
   <body>
     <?php
-    // include('header.php');
     $idp= $_POST['idp'];
-     ?>
-<?php
-// include('bdd.php');
 echo 'Bonjour '.$_SESSION['pseudo'];
 ?>
 <form class="" action="../controle/index.php" method="post">
@@ -29,11 +25,5 @@ echo 'Bonjour '.$_SESSION['pseudo'];
 </form>
 </div>
 
-
-
-
-<?php
-// include('footer.php');
- ?>
 </body>
 </html>

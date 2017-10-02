@@ -10,7 +10,7 @@
  $password=sha1($pass);
  $password2=sha1($password1);
  include('../modele/data.php');
- $donnees=comparaison_pseudo($pseudo);
+ $donnees=compare_pseudo($pseudo);
 
 if (isset($_POST['mail']))
 {
@@ -36,7 +36,7 @@ if (isset($_POST['mail']))
         include('logging.php');
     }
     else {
-     envoie_enregistrement($pseudo, $password, $mail, $name, $surname, $age);
+     send_register($pseudo, $password, $mail, $name, $surname, $age);
      include('connection.php');
     }
   }

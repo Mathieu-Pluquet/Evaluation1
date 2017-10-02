@@ -5,7 +5,7 @@ include('../modele/data.php');
 $pseudo=strtolower($_POST['pseudo']);
 $pass=$_POST['password'];
 $password=sha1($pass);
-$donnees=comparaison_mdp($password,$pseudo);
+$donnees=compare_wordpass($password,$pseudo);
 if ($password ==$donnees['password'] and $pseudo==$donnees['pseudo']){
   $_SESSION['pseudo']=$pseudo;
   $_SESSION['id']=$donnees['id'];

@@ -14,12 +14,12 @@ echo 'Bonjour '.$_SESSION['pseudo'];
 </form>
 
 <div class="container">
-<h1 class="text-center">Add a project</h1>
+<h1 class="text-center">Add a task</h1>
 
-<form enctype="multipart/form-data" class="" action="../controle/create_project_post.php" method="post">
-<input type="text" name="name_project" value="" placeholder="nom" required="required"><br>
-<input type="text" name="text_project" value="" placeholder="courte description" required="required"><br>
-<input type="date" name="date_project" placeholder="date" value="">
+<form enctype="multipart/form-data" class="" action="../controle/create_task_post.php" method="post">
+<input type="text" name="name_task" value="" placeholder="nom" required="required"><br>
+<input type="text" name="date_task" value="" placeholder="date" required="required"><br>
+<input type="hidden" name="idp" value="<?php echo $idp ?>">
 <input type="submit" name="publier" value="publier">
 </form>
 </div>

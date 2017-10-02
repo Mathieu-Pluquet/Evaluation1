@@ -1,26 +1,26 @@
 <?php
 
-function get_infos(){
-include('bdd.php');
-  $reponse = $bdd->query('SELECT * FROM infos');
-  return $reponse->fetch();
-}
-
-function get_img_articles(){
+function get_user_id(){
 include('bdd.php');
    $reponse = $bdd->query('SELECT * FROM user u INNER JOIN project p ON p.id_user = u.id');
    return $reponse->fetchAll();
 }
 
-function get_img_articles_id($vartest){
+function get_project_id($vartest){
 include('bdd.php');
   $reponse = $bdd->prepare('SELECT * FROM project p INNER JOIN step s ON s.id_project = p.id and p.id = ?');
   $reponse->execute(array($vartest));
   return $reponse->fetchAll();
 }
 
+function get_step_id($vartest){
+include('bdd.php');
+  $reponse = $bdd->prepare('SELECT * FROM step s INNER JOIN task t ON t.id_step = s.id');
+  $reponse->execute(array($vartest));
+  return $reponse->fetchAll();
+}
 
-function envoie_enregistrement($pseudo, $password, $mail, $name, $surname, $age){
+function send_register($pseudo, $password, $mail, $name, $surname, $age){
 include('bdd.php');
   $req = $bdd->prepare('INSERT INTO user (pseudo, password, mail, name, surname, age) VALUES(:pseudo, :password, :mail, :name, :surname, :age)');
   $req->execute(array(
@@ -33,7 +33,7 @@ include('bdd.php');
      ));
 }
 
-function comparaison_mdp($password, $pseudo){
+function compare_wordpass($password, $pseudo){
 include('bdd.php');
 $req=$bdd->prepare('SELECT * FROM user WHERE password=:password and pseudo=:pseudo');
 $req->execute(array(
@@ -43,7 +43,7 @@ $req->execute(array(
 return $req->fetch();
 }
 
-function comparaison_pseudo($pseudo){
+function compare_pseudo($pseudo){
 include('bdd.php');
 $req=$bdd->prepare('SELECT * FROM user WHERE  pseudo=:pseudo');
 $req->execute(array(
@@ -52,18 +52,6 @@ $req->execute(array(
 return $req->fetch();
 }
 
-function max_id_img(){
-include('bdd.php');
-  $reponse=$bdd->query('SELECT MAX(id) as img_id FROM image');
-  $donnees=$reponse->fetch();
-  return $donnees;
-}
-
-// function envoie_article($infos){
-// include('bdd.php');
-//   $req = $bdd->prepare('INSERT INTO project SET name_project=?, text_project=?, date_project=? ');
-//   $req->execute([$infos['name_project'],$infos['text_project'], $infos['date_project']]);
-// }
 
 function create_project($name, $text, $date, $ids){
 include('bdd.php');
@@ -86,7 +74,7 @@ include('bdd.php');
 
 function create_task($name, $date, $idp){
 include('bdd.php');
-  $req =$bdd->prepare("INSERT INTO step (id_step,name_task,date_task) VALUES (:id_step,:name_task,:date_task)");
+  $req =$bdd->prepare("INSERT INTO task (id_step,name_task,date_task) VALUES (:id_step,:name_task,:date_task)");
   $req->execute(array(
     'name_task'=> $name,
     'date_task'=>$date,
@@ -111,6 +99,29 @@ include('bdd.php');
 }
 
 
+function delete_step2($idp){
+include('bdd.php');
+  $req =$bdd->prepare("DELETE FROM step WHERE id= ?");
+  $req->execute(array(
+    $idp
+    ));
+}
 
+
+function delete_step3($idp){
+include('bdd.php');
+  $req =$bdd->prepare("DELETE project, step, task FROM project LEFT JOIN  step ON step.id_project = project.id LEFT JOIN task  ON task.id_step = step.id WHERE step.id_project= 5");
+  $req->execute(array(
+    $idp
+    ));
+}
+
+function delete_task($idp){
+include('bdd.php');
+  $req =$bdd->prepare("DELETE FROM task WHERE id_step= ?");
+  $req->execute(array(
+    $idp
+    ));
+}
 
 ?>

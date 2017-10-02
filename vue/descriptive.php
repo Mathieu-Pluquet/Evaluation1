@@ -7,13 +7,6 @@ if(isset($_SESSION['pseudo'])){
 </form>
 <?php
 }
-// $vartest= $_POST["test"];
-// include('bdd.php');
-
-// $reponse = $bdd->prepare('SELECT * FROM image i INNER JOIN articles a ON a.id_img = i.id and a.id = ?');
-// $reponse->execute(array($vartest));
-
-// include('bdd.php');
 echo 'Bonjour '.$_SESSION['pseudo'];
 ?>
 
@@ -29,20 +22,31 @@ foreach ($variable as $donnees) {
  <div class="container">
    <div class="row">
      <div class="card">
-     <h3 class="card-header"><?php echo $donnees["name_step"];?></h3>
+     <h2 class="card-header"><?php echo $donnees["name_step"];?></h2>
+     <h3 class="card-header"><?php echo $donnees["text_step"];?></h3>
      <div class="card-block">
        <ul>
-            <li class="card-text"><?php echo $donnees["text_step"];?></li>
+         <?php foreach ($variable_task as $donneestask){
+
+            if ($donnees["id"] == $donneestask['id_step'] ){?>
+            <li class="card-text">
+              <form class="" action="../controle/create_task.php" method="post">
+                <input type="hidden" name="test" value="<?php echo $donnees["id"]?>">
+                <input type="submit" name="task" value="delete task">
+              </form>
+              <?php echo $donneestask["name_task"];}?>
+            </li>
+          <?php } ?>
        </ul>
      </div>
      <form class="" action="../controle/create_task.php" method="post">
-       <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
+       <input type="hidden" name="test" value="<?php echo $donnees["id"]?>">
        <input type="submit" name="task" value="add task">
      </form>
-     
-     <form class="bdelete" action="../controle/delete_project.php" method="post">
-       <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
-       <input type="submit" name="delete" value="delete">
+
+     <form class="bdelete" action="../controle/delete_step.php" method="post">
+       <input type="hidden" name="delete" value="<?php echo $donnees["id"];?>">
+       <input type="submit" name="delet" value="delete">
      </form>
 
      </div>
@@ -50,15 +54,9 @@ foreach ($variable as $donnees) {
 </div>
 </section>
 
-
-
-
 <?php
 }
 ?>
 
-<?php
-// include('footer.php');
-?>
   </body>
 </html>

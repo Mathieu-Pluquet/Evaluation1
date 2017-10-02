@@ -9,9 +9,7 @@
 ?>
  <div class="container">
    <div class="row d-flex justify-content-around">
-     <!-- test -->
 <?php
-//  $reponse = $bdd->query('SELECT * FROM image i INNER JOIN articles a ON a.id_img = i.id');
  foreach ($variable as $donnees) {
 ?>
        <form class="card my-4" action="../controle/descriptive.php" style="width: 20rem;" method="post">
