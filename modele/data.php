@@ -124,4 +124,13 @@ include('bdd.php');
     ));
 }
 
+
+function delete_task2($idp){
+include('bdd.php');
+  $req =$bdd->prepare("DELETE FROM task WHERE id= ?");
+  $req->execute(array(
+    $idp
+    ));
+}
+
 ?>

@@ -30,9 +30,9 @@ foreach ($variable as $donnees) {
 
             if ($donnees["id"] == $donneestask['id_step'] ){?>
             <li class="card-text">
-              <form class="" action="../controle/create_task.php" method="post">
-                <input type="hidden" name="test" value="<?php echo $donnees["id"]?>">
-                <input type="submit" name="task" value="delete task">
+              <form class="" action="../controle/delete_task.php" method="post">
+                <input type="hidden" name="deletask" value="<?php echo $donneestask["id"]?>">
+                <input type="submit" name="deletetask" value="delete task">
               </form>
               <?php echo $donneestask["name_task"];}?>
             </li>
@@ -46,9 +46,8 @@ foreach ($variable as $donnees) {
 
      <form class="bdelete" action="../controle/delete_step.php" method="post">
        <input type="hidden" name="delete" value="<?php echo $donnees["id"];?>">
-       <input type="submit" name="delet" value="delete">
+       <input type="submit" name="delet" value="delete step">
      </form>
-
      </div>
   </div>
 </div>
