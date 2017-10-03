@@ -20,9 +20,9 @@ foreach ($variable as $donnees) {
 ?>
 <section>
  <div class="container">
-   <div class="row">
+   <div class="row d-flex justify-content-around">
      <div class="card">
-     <h2 class="card-header"><?php echo $donnees["name_step"];?></h2>
+     <h2 class="card-header">Titre: <?php echo $donnees["name_step"];?></h2>
      <h3 class="card-header"><?php echo $donnees["text_step"];?></h3>
      <div class="card-block">
        <ul>
@@ -33,15 +33,17 @@ foreach ($variable as $donnees) {
               <?php
               if(isset($_SESSION['pseudo'])){
                 ?>
+                <div class="flex">
               <form class="" action="../controle/delete_task.php" method="post">
                 <input type="hidden" name="deletask" value="<?php echo $donneestask["id"]?>">
-                <input type="submit" name="deletetask" value="delete task">
+                <button type="submit" name="deletetask" value=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
               </form>
 
               <form class="" action="../controle/end_task.php" method="post">
                 <input type="hidden" name="endtask" value="<?php echo $donneestask["id"]?>">
-                <input type="submit" name="end" value="">
+                <button type="submit" name="end" value=""><i class="fa fa-check-square-o" aria-hidden="true"></i></button>
               </form>
+                </div>
               <?php } ?>
                     <?php echo $donneestask["name_task"];
               if ($donneestask['end_task'] == 'true'){?>
@@ -57,12 +59,12 @@ foreach ($variable as $donnees) {
        ?>
      <form class="" action="../controle/create_task.php" method="post">
        <input type="hidden" name="test" value="<?php echo $donnees["id"]?>">
-       <input type="submit" name="task" value="add task">
+       <button type="submit" name="task" value="add task">Add task  <i class="fa fa-plus" aria-hidden="true"></i></button>
      </form>
 
      <form class="bdelete" action="../controle/delete_step.php" method="post">
        <input type="hidden" name="delete" value="<?php echo $donnees["id"];?>">
-       <input type="submit" name="delet" value="delete step">
+       <button type="submit" name="delet" value="delete step">Delete Step<i class="fa fa-trash-o" aria-hidden="true"></i></button>
      </form>
    <?php } ?>
      </div>

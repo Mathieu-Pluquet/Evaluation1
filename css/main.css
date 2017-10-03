@@ -118,8 +118,11 @@ textarea {
      margin: 0;
    }
 
+
+
+   */
+
    footer  {
-     background-color: #D8C9AD;
      height: 150px;
      display: flex;
      justify-content: center;
@@ -133,7 +136,7 @@ textarea {
    footer p {
      margin: 0;
      color: black;
-   }*/
+   }
 
    .row{
      display: flex;
@@ -189,7 +192,13 @@ textarea {
      background-color: #59514A;
    }
 
+  .flex {
+    display: flex;
+  }
 
+  footer {
+    margin-top: 100px;
+  }
 
 
 

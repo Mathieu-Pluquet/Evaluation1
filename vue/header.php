@@ -10,10 +10,10 @@
     <title></title>
     <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -30,6 +30,8 @@
 
   <body>
     <header class="header-color">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
       <?php
 if(isset($_SESSION['pseudo'])){
   echo '<form action="../controle/disconnected.php" method="POST">';
@@ -42,8 +44,10 @@ else{
   echo '</form>';
 }
 ?>
-        <h1 class="hid display-3 text-center">Evaluation1</h1>
-        <p class="hid lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+
+    <h1 class="display-3">Evaluation 1</h1>
+  </div>
+</div>
       </header>
       </body>
     </html>
