@@ -12,4 +12,4 @@ descriptive:
 
 connection:
 
--if you are connect you can create/delete a project, step and task
+- if you are connect you can create/delete a project, step and task
