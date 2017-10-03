@@ -64,7 +64,7 @@ foreach ($variable as $donnees) {
 
      <form class="bdelete" action="../controle/delete_step.php" method="post">
        <input type="hidden" name="delete" value="<?php echo $donnees["id"];?>">
-       <button type="submit" name="delet" value="delete step">Delete Step<i class="fa fa-trash-o" aria-hidden="true"></i></button>
+       <button type="submit" name="delet" value="delete step">Delete Step <i class="fa fa-trash-o" aria-hidden="true"></i></button>
      </form>
    <?php } ?>
      </div>
