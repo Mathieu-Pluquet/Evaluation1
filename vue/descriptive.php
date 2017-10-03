@@ -14,17 +14,17 @@ echo 'Bonjour '.$_SESSION['pseudo'];
   <input type="submit" name="" value="retour">
 </form>
 
-
-<?php
-foreach ($variable as $donnees) {
-?>
 <section>
  <div class="container">
    <div class="row d-flex justify-content-around">
-     <div class="card">
+<?php
+foreach ($variable as $donnees) {
+?>
+
+     <div class="card" style="width: 20rem;">
      <h2 class="card-header">Titre: <?php echo $donnees["name_step"];?></h2>
      <h3 class="card-header"><?php echo $donnees["text_step"];?></h3>
-     <div class="card-block">
+     <div class="card-block" >
        <ul>
          <?php foreach ($variable_task as $donneestask){
 
@@ -45,15 +45,16 @@ foreach ($variable as $donnees) {
               </form>
                 </div>
               <?php } ?>
-                    <?php echo $donneestask["name_task"];
-              if ($donneestask['end_task'] == 'true'){?>
+                    <?php echo $donneestask["name_task"];?><br>
+                    <?php echo $donneestask["date_task"];
+                    if ($donneestask['end_task'] == 'true'){?>
                 <i class="fa fa-check-square-o" aria-hidden="true"></i>
               <?php }
                 } ?>
             </li>
           <?php } ?>
        </ul>
-     </div>
+
      <?php
      if(isset($_SESSION['pseudo'])){
        ?>
@@ -67,14 +68,14 @@ foreach ($variable as $donnees) {
        <button type="submit" name="delet" value="delete step">Delete Step <i class="fa fa-trash-o" aria-hidden="true"></i></button>
      </form>
    <?php } ?>
+   </div>
      </div>
-  </div>
-</div>
-</section>
 
 <?php
 }
 ?>
-
+</div>
+</div>
+</section>
   </body>
 </html>
