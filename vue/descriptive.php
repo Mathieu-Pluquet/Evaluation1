@@ -6,8 +6,8 @@ if(isset($_SESSION['pseudo'])){
   <input type="submit" value="Add a step">
 </form>
 <?php
-}
 echo 'Bonjour '.$_SESSION['pseudo'];
+}
 ?>
 
 <form class="" action="../controle/index.php" method="post">
@@ -30,6 +30,9 @@ foreach ($variable as $donnees) {
 
             if ($donnees["id"] == $donneestask['id_step'] ){?>
             <li class="card-text">
+              <?php
+              if(isset($_SESSION['pseudo'])){
+                ?>
               <form class="" action="../controle/delete_task.php" method="post">
                 <input type="hidden" name="deletask" value="<?php echo $donneestask["id"]?>">
                 <input type="submit" name="deletetask" value="delete task">
@@ -39,6 +42,7 @@ foreach ($variable as $donnees) {
                 <input type="hidden" name="endtask" value="<?php echo $donneestask["id"]?>">
                 <input type="submit" name="end" value="">
               </form>
+              <?php } ?>
                     <?php echo $donneestask["name_task"];
               if ($donneestask['end_task'] == 'true'){?>
                 <i class="fa fa-check-square-o" aria-hidden="true"></i>
@@ -48,6 +52,9 @@ foreach ($variable as $donnees) {
           <?php } ?>
        </ul>
      </div>
+     <?php
+     if(isset($_SESSION['pseudo'])){
+       ?>
      <form class="" action="../controle/create_task.php" method="post">
        <input type="hidden" name="test" value="<?php echo $donnees["id"]?>">
        <input type="submit" name="task" value="add task">
@@ -57,6 +64,7 @@ foreach ($variable as $donnees) {
        <input type="hidden" name="delete" value="<?php echo $donnees["id"];?>">
        <input type="submit" name="delet" value="delete step">
      </form>
+   <?php } ?>
      </div>
   </div>
 </div>

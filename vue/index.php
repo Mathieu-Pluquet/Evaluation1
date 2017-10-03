@@ -23,12 +23,14 @@
            </div>
          </div>
         </form>
-
+        <?php
+        if(isset($_SESSION['pseudo'])){
+          ?>
         <form class="bdelete" action="../controle/delete_project.php" method="post">
           <input type="hidden" name="test" value="<?php echo $donnees["id"];?>">
               <input type="submit" name="delete" value="delete">
         </form>
-
+      <?php } ?>
 
 <?php
  }
