@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+
     <div class="container" id="inscription">
     <h1>Se connecter :</h1>
     <form class="" action="../controle/connection_post.php" method="post">

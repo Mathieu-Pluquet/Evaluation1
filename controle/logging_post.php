@@ -1,5 +1,5 @@
 <?php
- // envoie le message a la bdd
+ 
  $pseudo=strtolower($_POST['pseudo']);
  $pass=$_POST['password'];
  $password1=$_POST['password1'];

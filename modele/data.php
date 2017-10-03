@@ -6,6 +6,13 @@ include('bdd.php');
    return $reponse->fetchAll();
 }
 
+function get_user_id2($vartest){
+include('bdd.php');
+  $reponse = $bdd->prepare('SELECT * FROM user u INNER JOIN project p ON p.id_user = u.id and u.id = ?');
+  $reponse->execute(array($vartest));
+  return $reponse->fetchAll();
+}
+
 function get_project_id($vartest){
 include('bdd.php');
   $reponse = $bdd->prepare('SELECT * FROM project p INNER JOIN step s ON s.id_project = p.id and p.id = ?');
