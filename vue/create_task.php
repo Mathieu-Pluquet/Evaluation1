@@ -6,9 +6,6 @@
     <title></title>
   </head>
   <body>
-    <?php
-echo 'Bonjour '.$_SESSION['pseudo'];
-?>
 <form class="" action="../controle/index.php" method="post">
   <input type="submit" name="" value="retour">
 </form>

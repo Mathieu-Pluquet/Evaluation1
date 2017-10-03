@@ -8,7 +8,6 @@
   <body>
     <?php
     $idp= $_POST['idp'];
-echo 'Bonjour '.$_SESSION['pseudo'];
 ?>
 <form class="" action="../controle/index.php" method="post">
   <input type="submit" name="" value="retour">

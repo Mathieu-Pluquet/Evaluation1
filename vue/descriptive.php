@@ -6,7 +6,6 @@ if(isset($_SESSION['pseudo'])){
   <input type="submit" value="Add a step">
 </form>
 <?php
-echo 'Bonjour '.$_SESSION['pseudo'];
 }
 ?>
 
@@ -23,13 +22,15 @@ foreach ($variable as $donnees) {
 
      <div class="card" style="width: 20rem;">
      <h2 class="card-header">Titre: <?php echo $donnees["name_step"];?></h2>
-     <h3 class="card-header"><?php echo $donnees["text_step"];?></h3>
+     <h4 class="card-header"><?php echo $donnees["text_step"];?></h4>
      <div class="card-block" >
        <ul>
          <?php foreach ($variable_task as $donneestask){
 
             if ($donnees["id"] == $donneestask['id_step'] ){?>
             <li class="card-text">
+              <?php echo $donneestask["name_task"];?><br>
+              <?php echo $donneestask["date_task"];?>
               <?php
               if(isset($_SESSION['pseudo'])){
                 ?>
@@ -44,9 +45,7 @@ foreach ($variable as $donnees) {
                 <button type="submit" name="end" value=""><i class="fa fa-check-square-o" aria-hidden="true"></i></button>
               </form>
                 </div>
-              <?php } ?>
-                    <?php echo $donneestask["name_task"];?><br>
-                    <?php echo $donneestask["date_task"];
+              <?php }
                     if ($donneestask['end_task'] == 'true'){?>
                 <i class="fa fa-check-square-o" aria-hidden="true"></i>
               <?php }
